@@ -1,0 +1,2 @@
+Invoking command in '/home/daniel/TFG_ws/src/build/first_pkg': /usr/bin/cmake /home/daniel/TFG_ws/src/first_pkg -DCMAKE_INSTALL_PREFIX=/home/daniel/TFG_ws/src/install/first_pkg
+Invoked command in '/home/daniel/TFG_ws/src/build/first_pkg' returned '1': /usr/bin/cmake /home/daniel/TFG_ws/src/first_pkg -DCMAKE_INSTALL_PREFIX=/home/daniel/TFG_ws/src/install/first_pkg

@@ -1,0 +1,84 @@
+[0.023s] Invoking command in '/home/daniel/TFG_ws/src/build/carla_pkg': CMAKE_PREFIX_PATH=/home/daniel/ros_bridge/install/tutorial_interfaces:/home/daniel/ros_bridge/install/carla_ad_demo:/home/daniel/ros_bridge/install/rviz_carla_plugin:/home/daniel/ros_bridge/install/pcl_recorder:/home/daniel/ros_bridge/install/carla_waypoint_types:/home/daniel/ros_bridge/install/rqt_carla_control:/home/daniel/ros_bridge/install/carla_waypoint_publisher:/home/daniel/ros_bridge/install/carla_ackermann_control:/home/daniel/ros_bridge/install/carla_ros_bridge:/home/daniel/ros_bridge/install/carla_spawn_objects:/home/daniel/ros_bridge/install/carla_manual_control:/home/daniel/ros_bridge/install/carla_ad_agent:/home/daniel/ros_bridge/install/ros_compatibility:/home/daniel/ros_bridge/install/carla_walker_agent:/home/daniel/ros_bridge/install/carla_twist_to_control:/home/daniel/ros_bridge/install/carla_ros_scenario_runner:/home/daniel/ros_bridge/install/carla_common:/opt/ros/foxy:/home/daniel/ros_bridge/install/carla_ros_scenario_runner_types:/home/daniel/ros_bridge/install/carla_ackermann_msgs:/home/daniel/ros_bridge/install/carla_msgs:/home/daniel/TFG_ws/install/first_pkg:/home/daniel/TFG_ws/install/carla_pkg /usr/bin/cmake /home/daniel/TFG_ws/src/carla_pkg -DCMAKE_INSTALL_PREFIX=/home/daniel/TFG_ws/src/install/carla_pkg
+[0.108s] -- The C compiler identification is GNU 9.4.0
+[0.156s] -- The CXX compiler identification is GNU 9.4.0
+[0.161s] -- Check for working C compiler: /usr/bin/cc
+[0.218s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.219s] -- Detecting C compiler ABI info
+[0.276s] -- Detecting C compiler ABI info - done
+[0.286s] -- Detecting C compile features
+[0.286s] -- Detecting C compile features - done
+[0.288s] -- Check for working CXX compiler: /usr/bin/c++
+[0.353s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.354s] -- Detecting CXX compiler ABI info
+[0.420s] -- Detecting CXX compiler ABI info - done
+[0.430s] -- Detecting CXX compile features
+[0.431s] -- Detecting CXX compile features - done
+[0.433s] -- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.460s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.461s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.674s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.768s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.769s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.769s] -- Configured cppcheck include dirs: 
+[0.769s] -- Configured cppcheck exclude dirs and/or files: 
+[0.770s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.770s] -- Configured cpplint exclude dirs and/or files: 
+[0.771s] -- Added test 'lint_cmake' to check CMake code style
+[0.772s] -- Added test 'uncrustify' to check C / C++ code style
+[0.772s] -- Configured uncrustify additional arguments: 
+[0.772s] -- Added test 'xmllint' to check XML markup files
+[0.775s] -- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.823s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.830s] -- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.902s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[0.929s] -- Found FastRTPS: /opt/ros/foxy/include  
+[1.001s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.056s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[1.058s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.059s] -- Looking for pthread.h
+[1.120s] -- Looking for pthread.h - found
+[1.121s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.182s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[1.182s] -- Looking for pthread_create in pthreads
+[1.235s] -- Looking for pthread_create in pthreads - not found
+[1.235s] -- Looking for pthread_create in pthread
+[1.312s] -- Looking for pthread_create in pthread - found
+[1.312s] -- Found Threads: TRUE  
+[1.449s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[1.562s] -- Configuring done
+[1.570s] -- Generating done
+[1.572s] -- Build files have been written to: /home/daniel/TFG_ws/src/build/carla_pkg
+[1.578s] Invoked command in '/home/daniel/TFG_ws/src/build/carla_pkg' returned '0': CMAKE_PREFIX_PATH=/home/daniel/ros_bridge/install/tutorial_interfaces:/home/daniel/ros_bridge/install/carla_ad_demo:/home/daniel/ros_bridge/install/rviz_carla_plugin:/home/daniel/ros_bridge/install/pcl_recorder:/home/daniel/ros_bridge/install/carla_waypoint_types:/home/daniel/ros_bridge/install/rqt_carla_control:/home/daniel/ros_bridge/install/carla_waypoint_publisher:/home/daniel/ros_bridge/install/carla_ackermann_control:/home/daniel/ros_bridge/install/carla_ros_bridge:/home/daniel/ros_bridge/install/carla_spawn_objects:/home/daniel/ros_bridge/install/carla_manual_control:/home/daniel/ros_bridge/install/carla_ad_agent:/home/daniel/ros_bridge/install/ros_compatibility:/home/daniel/ros_bridge/install/carla_walker_agent:/home/daniel/ros_bridge/install/carla_twist_to_control:/home/daniel/ros_bridge/install/carla_ros_scenario_runner:/home/daniel/ros_bridge/install/carla_common:/opt/ros/foxy:/home/daniel/ros_bridge/install/carla_ros_scenario_runner_types:/home/daniel/ros_bridge/install/carla_ackermann_msgs:/home/daniel/ros_bridge/install/carla_msgs:/home/daniel/TFG_ws/install/first_pkg:/home/daniel/TFG_ws/install/carla_pkg /usr/bin/cmake /home/daniel/TFG_ws/src/carla_pkg -DCMAKE_INSTALL_PREFIX=/home/daniel/TFG_ws/src/install/carla_pkg
+[1.580s] Invoking command in '/home/daniel/TFG_ws/src/build/carla_pkg': CMAKE_PREFIX_PATH=/home/daniel/ros_bridge/install/tutorial_interfaces:/home/daniel/ros_bridge/install/carla_ad_demo:/home/daniel/ros_bridge/install/rviz_carla_plugin:/home/daniel/ros_bridge/install/pcl_recorder:/home/daniel/ros_bridge/install/carla_waypoint_types:/home/daniel/ros_bridge/install/rqt_carla_control:/home/daniel/ros_bridge/install/carla_waypoint_publisher:/home/daniel/ros_bridge/install/carla_ackermann_control:/home/daniel/ros_bridge/install/carla_ros_bridge:/home/daniel/ros_bridge/install/carla_spawn_objects:/home/daniel/ros_bridge/install/carla_manual_control:/home/daniel/ros_bridge/install/carla_ad_agent:/home/daniel/ros_bridge/install/ros_compatibility:/home/daniel/ros_bridge/install/carla_walker_agent:/home/daniel/ros_bridge/install/carla_twist_to_control:/home/daniel/ros_bridge/install/carla_ros_scenario_runner:/home/daniel/ros_bridge/install/carla_common:/opt/ros/foxy:/home/daniel/ros_bridge/install/carla_ros_scenario_runner_types:/home/daniel/ros_bridge/install/carla_ackermann_msgs:/home/daniel/ros_bridge/install/carla_msgs:/home/daniel/TFG_ws/install/first_pkg:/home/daniel/TFG_ws/install/carla_pkg /usr/bin/cmake --build /home/daniel/TFG_ws/src/build/carla_pkg -- -j16 -l16
+[1.629s] Scanning dependencies of target joint
+[1.643s] [ 50%] Building CXX object CMakeFiles/joint.dir/src/join_lidar_msg.cpp.o
+[2.764s] /home/daniel/TFG_ws/src/carla_pkg/src/join_lidar_msg.cpp: In member function ‘void Joint::publish_method()’:
+[2.764s] /home/daniel/TFG_ws/src/carla_pkg/src/join_lidar_msg.cpp:25:9: warning: unused variable ‘size1’ [-Wunused-variable]
+[2.764s]    25 |     int size1 = sizeof(points1.data);
+[2.764s]       |         ^~~~~
+[2.764s] /home/daniel/TFG_ws/src/carla_pkg/src/join_lidar_msg.cpp:26:9: warning: unused variable ‘size2’ [-Wunused-variable]
+[2.764s]    26 |     int size2 = sizeof(points2.data);
+[2.764s]       |         ^~~~~
+[6.167s] [100%] Linking CXX executable joint
+[6.366s] [100%] Built target joint
+[6.378s] Invoked command in '/home/daniel/TFG_ws/src/build/carla_pkg' returned '0': CMAKE_PREFIX_PATH=/home/daniel/ros_bridge/install/tutorial_interfaces:/home/daniel/ros_bridge/install/carla_ad_demo:/home/daniel/ros_bridge/install/rviz_carla_plugin:/home/daniel/ros_bridge/install/pcl_recorder:/home/daniel/ros_bridge/install/carla_waypoint_types:/home/daniel/ros_bridge/install/rqt_carla_control:/home/daniel/ros_bridge/install/carla_waypoint_publisher:/home/daniel/ros_bridge/install/carla_ackermann_control:/home/daniel/ros_bridge/install/carla_ros_bridge:/home/daniel/ros_bridge/install/carla_spawn_objects:/home/daniel/ros_bridge/install/carla_manual_control:/home/daniel/ros_bridge/install/carla_ad_agent:/home/daniel/ros_bridge/install/ros_compatibility:/home/daniel/ros_bridge/install/carla_walker_agent:/home/daniel/ros_bridge/install/carla_twist_to_control:/home/daniel/ros_bridge/install/carla_ros_scenario_runner:/home/daniel/ros_bridge/install/carla_common:/opt/ros/foxy:/home/daniel/ros_bridge/install/carla_ros_scenario_runner_types:/home/daniel/ros_bridge/install/carla_ackermann_msgs:/home/daniel/ros_bridge/install/carla_msgs:/home/daniel/TFG_ws/install/first_pkg:/home/daniel/TFG_ws/install/carla_pkg /usr/bin/cmake --build /home/daniel/TFG_ws/src/build/carla_pkg -- -j16 -l16
+[6.399s] Invoking command in '/home/daniel/TFG_ws/src/build/carla_pkg': CMAKE_PREFIX_PATH=/home/daniel/ros_bridge/install/tutorial_interfaces:/home/daniel/ros_bridge/install/carla_ad_demo:/home/daniel/ros_bridge/install/rviz_carla_plugin:/home/daniel/ros_bridge/install/pcl_recorder:/home/daniel/ros_bridge/install/carla_waypoint_types:/home/daniel/ros_bridge/install/rqt_carla_control:/home/daniel/ros_bridge/install/carla_waypoint_publisher:/home/daniel/ros_bridge/install/carla_ackermann_control:/home/daniel/ros_bridge/install/carla_ros_bridge:/home/daniel/ros_bridge/install/carla_spawn_objects:/home/daniel/ros_bridge/install/carla_manual_control:/home/daniel/ros_bridge/install/carla_ad_agent:/home/daniel/ros_bridge/install/ros_compatibility:/home/daniel/ros_bridge/install/carla_walker_agent:/home/daniel/ros_bridge/install/carla_twist_to_control:/home/daniel/ros_bridge/install/carla_ros_scenario_runner:/home/daniel/ros_bridge/install/carla_common:/opt/ros/foxy:/home/daniel/ros_bridge/install/carla_ros_scenario_runner_types:/home/daniel/ros_bridge/install/carla_ackermann_msgs:/home/daniel/ros_bridge/install/carla_msgs:/home/daniel/TFG_ws/install/first_pkg:/home/daniel/TFG_ws/install/carla_pkg /usr/bin/cmake --install /home/daniel/TFG_ws/src/build/carla_pkg
+[6.406s] -- Install configuration: ""
+[6.406s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/ament_index/resource_index/package_run_dependencies/carla_pkg
+[6.406s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/ament_index/resource_index/parent_prefix_path/carla_pkg
+[6.407s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/carla_pkg/environment/ament_prefix_path.sh
+[6.407s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/carla_pkg/environment/ament_prefix_path.dsv
+[6.407s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/carla_pkg/environment/path.sh
+[6.407s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/carla_pkg/environment/path.dsv
+[6.407s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/carla_pkg/local_setup.bash
+[6.407s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/carla_pkg/local_setup.sh
+[6.407s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/carla_pkg/local_setup.zsh
+[6.407s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/carla_pkg/local_setup.dsv
+[6.407s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/carla_pkg/package.dsv
+[6.408s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/ament_index/resource_index/packages/carla_pkg
+[6.408s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/carla_pkg/cmake/carla_pkgConfig.cmake
+[6.408s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/carla_pkg/cmake/carla_pkgConfig-version.cmake
+[6.408s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/share/carla_pkg/package.xml
+[6.408s] -- Installing: /home/daniel/TFG_ws/src/install/carla_pkg/lib/carla_pkg/joint
+[6.410s] -- Set runtime path of "/home/daniel/TFG_ws/src/install/carla_pkg/lib/carla_pkg/joint" to ""
+[6.415s] Invoked command in '/home/daniel/TFG_ws/src/build/carla_pkg' returned '0': CMAKE_PREFIX_PATH=/home/daniel/ros_bridge/install/tutorial_interfaces:/home/daniel/ros_bridge/install/carla_ad_demo:/home/daniel/ros_bridge/install/rviz_carla_plugin:/home/daniel/ros_bridge/install/pcl_recorder:/home/daniel/ros_bridge/install/carla_waypoint_types:/home/daniel/ros_bridge/install/rqt_carla_control:/home/daniel/ros_bridge/install/carla_waypoint_publisher:/home/daniel/ros_bridge/install/carla_ackermann_control:/home/daniel/ros_bridge/install/carla_ros_bridge:/home/daniel/ros_bridge/install/carla_spawn_objects:/home/daniel/ros_bridge/install/carla_manual_control:/home/daniel/ros_bridge/install/carla_ad_agent:/home/daniel/ros_bridge/install/ros_compatibility:/home/daniel/ros_bridge/install/carla_walker_agent:/home/daniel/ros_bridge/install/carla_twist_to_control:/home/daniel/ros_bridge/install/carla_ros_scenario_runner:/home/daniel/ros_bridge/install/carla_common:/opt/ros/foxy:/home/daniel/ros_bridge/install/carla_ros_scenario_runner_types:/home/daniel/ros_bridge/install/carla_ackermann_msgs:/home/daniel/ros_bridge/install/carla_msgs:/home/daniel/TFG_ws/install/first_pkg:/home/daniel/TFG_ws/install/carla_pkg /usr/bin/cmake --install /home/daniel/TFG_ws/src/build/carla_pkg

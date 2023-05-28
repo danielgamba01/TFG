@@ -1,0 +1,7 @@
+/home/daniel/TFG_ws/src/carla_pkg/src/join_lidar_msg.cpp: In member function ‘void Joint::publish_method()’:
+/home/daniel/TFG_ws/src/carla_pkg/src/join_lidar_msg.cpp:25:9: warning: unused variable ‘size1’ [-Wunused-variable]
+   25 |     int size1 = sizeof(points1.data);
+      |         ^~~~~
+/home/daniel/TFG_ws/src/carla_pkg/src/join_lidar_msg.cpp:26:9: warning: unused variable ‘size2’ [-Wunused-variable]
+   26 |     int size2 = sizeof(points2.data);
+      |         ^~~~~

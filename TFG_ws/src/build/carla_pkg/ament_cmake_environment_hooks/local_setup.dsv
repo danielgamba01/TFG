@@ -1,0 +1,2 @@
+source;share/carla_pkg/environment/ament_prefix_path.sh
+source;share/carla_pkg/environment/path.sh

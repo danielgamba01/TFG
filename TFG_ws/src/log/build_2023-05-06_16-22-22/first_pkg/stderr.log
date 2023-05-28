@@ -1,0 +1,7 @@
+/home/daniel/TFG_ws/src/first_pkg/src/hello.cpp: In function ‘int main(int, char**)’:
+/home/daniel/TFG_ws/src/first_pkg/src/hello.cpp:3:15: warning: unused parameter ‘argc’ [-Wunused-parameter]
+    3 | int main (int argc, char** argv)
+      |           ~~~~^~~~
+/home/daniel/TFG_ws/src/first_pkg/src/hello.cpp:3:28: warning: unused parameter ‘argv’ [-Wunused-parameter]
+    3 | int main (int argc, char** argv)
+      |                     ~~~~~~~^~~~

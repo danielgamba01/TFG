@@ -1,0 +1,63 @@
+-- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: 
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'cpplint' to check C / C++ code against the Google style
+-- Configured cpplint exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+-- Found FastRTPS: /opt/ros/foxy/include  
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/daniel/TFG_ws/src/build/first_pkg
+Scanning dependencies of target hello
+[ 50%] Building CXX object CMakeFiles/hello.dir/src/hello.cpp.o
+/home/daniel/TFG_ws/src/first_pkg/src/hello.cpp: In function ‘int main(int, char**)’:
+/home/daniel/TFG_ws/src/first_pkg/src/hello.cpp:3:15: warning: unused parameter ‘argc’ [-Wunused-parameter]
+    3 | int main (int argc, char** argv)
+      |           ~~~~^~~~
+/home/daniel/TFG_ws/src/first_pkg/src/hello.cpp:3:28: warning: unused parameter ‘argv’ [-Wunused-parameter]
+    3 | int main (int argc, char** argv)
+      |                     ~~~~~~~^~~~
+[100%] Linking CXX executable hello
+[100%] Built target hello
+-- Install configuration: ""
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/ament_index/resource_index/package_run_dependencies/first_pkg
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/ament_index/resource_index/parent_prefix_path/first_pkg
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/environment/ament_prefix_path.sh
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/environment/ament_prefix_path.dsv
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/environment/path.sh
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/environment/path.dsv
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/local_setup.bash
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/local_setup.sh
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/local_setup.zsh
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/local_setup.dsv
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/package.dsv
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/ament_index/resource_index/packages/first_pkg
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/cmake/first_pkgConfig.cmake
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/cmake/first_pkgConfig-version.cmake
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/package.xml
+-- Installing: /home/daniel/TFG_ws/src/install/first_pkg/lib/first_pkg/hello
+-- Set runtime path of "/home/daniel/TFG_ws/src/install/first_pkg/lib/first_pkg/hello" to ""

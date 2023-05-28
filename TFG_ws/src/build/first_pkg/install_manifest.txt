@@ -1,0 +1,16 @@
+/home/daniel/TFG_ws/src/install/first_pkg/share/ament_index/resource_index/package_run_dependencies/first_pkg
+/home/daniel/TFG_ws/src/install/first_pkg/share/ament_index/resource_index/parent_prefix_path/first_pkg
+/home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/environment/ament_prefix_path.sh
+/home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/environment/ament_prefix_path.dsv
+/home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/environment/path.sh
+/home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/environment/path.dsv
+/home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/local_setup.bash
+/home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/local_setup.sh
+/home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/local_setup.zsh
+/home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/local_setup.dsv
+/home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/package.dsv
+/home/daniel/TFG_ws/src/install/first_pkg/share/ament_index/resource_index/packages/first_pkg
+/home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/cmake/first_pkgConfig.cmake
+/home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/cmake/first_pkgConfig-version.cmake
+/home/daniel/TFG_ws/src/install/first_pkg/share/first_pkg/package.xml
+/home/daniel/TFG_ws/src/install/first_pkg/lib/first_pkg/hello
