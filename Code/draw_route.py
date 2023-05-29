@@ -1,3 +1,8 @@
+
+# Este archivo dibuja un el camino que sigue un actor en CARLA
+# que ha sido previamente publicado en ROS y guardado en un archivo bag
+# Autor: Daniel Steven Gamba Correa 
+
 from pathlib import Path
 
 from rosbags.highlevel import AnyReader
@@ -10,8 +15,8 @@ x=[]
 y=[]
 z=[]
 # create reader instance and open for reading
-with AnyReader([Path('/home/daniel/New_Code/bags/position_bag')]) as reader:
-    connections = [x for x in reader.connections if x.topic == '/carla/actor/position']
+with AnyReader([Path('/home/daniel/New_Code/bags/position_bag')]) as reader:              # Cambiar PATH por la ruta al camino 
+    connections = [x for x in reader.connections if x.topic == '/carla/actor/position']   # Cambiar topic por el topic donde se haya publicado
     for connection, timestamp, rawdata in reader.messages(connections=connections):
          msg = reader.deserialize(rawdata, connection.msgtype)
          x.append(msg.x)

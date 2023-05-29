@@ -1,3 +1,8 @@
+
+# Este archivo dibuja los puntos seleccionados sobre el mapa de CARLA
+# Sirve para visualizar las rutas predefinidas
+# Autor: Daniel Steven Gamba Correa 
+
 import carla
 import random
 

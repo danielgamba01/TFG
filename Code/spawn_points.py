@@ -1,3 +1,8 @@
+
+
+# Este archivo dibuja sobre el mapa de CARLA los puntos de generacion predeterminados
+# Autor: CARLA Simulator
+
 import carla
 import random
 
