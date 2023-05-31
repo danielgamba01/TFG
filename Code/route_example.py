@@ -1,9 +1,3 @@
-
-# Este archivo genera un cierto número de vehiculos donde desde 2 puntos 
-# distintos de la "Town10" del simulador de CARLA. Ha los vehiculos generados
-# les asocia una ruta.
-# Autor: CARLA Simulator
-
 import carla
 import random
 

@@ -1,8 +1,3 @@
-
-# Este archivo dibuja los puntos seleccionados sobre el mapa de CARLA
-# Sirve para visualizar las rutas predefinidas
-# Autor: Daniel Steven Gamba Correa 
-
 import carla
 import random
 
@@ -29,21 +24,52 @@ spectator = world.get_spectator()
 spawn_points = world.get_map().get_spawn_points()
 
 
-spawn_point =  spawn_points[32]
+spawn_point_1 =  spawn_points[88]
+spawn_point_bus =  spawn_points[133]
+spawn_point_car_1 =  spawn_points[241]
+spawn_point_car_2 =  spawn_points[130]
+spawn_point_car_3 =  spawn_points[60]
+spawn_point_bycicle_1= spawn_points[177]
+spawn_point_bycicle_2= spawn_points[2]
+
 # Create route from the chosen spawn points
-route_indices = [129, 28, 124, 33, 97, 119, 58, 154, 147]
-route = []
-for ind in route_indices:
-    route.append(spawn_points[ind].location)
+bus_indices = [234,204]
+car_1_indices = [225,241,225,241,225]
+car_2_indices = [71,195]
+car_3_indices = [3,172]
+bycicle_1_indices = [243]
+bycicle_2_indices = [4,236,2]
+
+tiempo=300
 
 # Now let's print them in the map so we can see our routes
-world.debug.draw_string(spawn_point.location, 'Spawn point', life_time=60, color=carla.Color(255,0,0))
+world.debug.draw_string(spawn_point_bus.location, 'Spawn point', life_time=tiempo, color=carla.Color(255,0,0))
+world.debug.draw_string(spawn_point_car_1.location, 'Spawn point', life_time=tiempo, color=carla.Color(0,255,0))
+world.debug.draw_string(spawn_point_car_2.location, 'Spawn point', life_time=tiempo, color=carla.Color(0,0,255))
+world.debug.draw_string(spawn_point_car_3.location, 'Spawn point', life_time=tiempo, color=carla.Color(255,255,0))
+world.debug.draw_string(spawn_point_bycicle_1.location, 'Spawn point', life_time=tiempo, color=carla.Color(255,0,255))
+world.debug.draw_string(spawn_point_bycicle_2.location, 'Spawn point', life_time=tiempo, color=carla.Color(0,255,255))
 
-for ind in route_indices:
+
+for ind in bus_indices:
     spawn_points[ind].location
-    world.debug.draw_string(spawn_points[ind].location, str(ind), life_time=60, color=carla.Color(255,0,0))
-
-
+    world.debug.draw_string(spawn_points[ind].location, str(ind), life_time=tiempo, color=carla.Color(255,0,0))
+for ind in car_1_indices:
+    spawn_points[ind].location
+    world.debug.draw_string(spawn_points[ind].location, str(ind), life_time=tiempo, color=carla.Color(0,255,0))
+for ind in car_2_indices:
+    spawn_points[ind].location
+    world.debug.draw_string(spawn_points[ind].location, str(ind), life_time=tiempo, color=carla.Color(0,0,255))
+for ind in car_3_indices:
+    spawn_points[ind].location
+    world.debug.draw_string(spawn_points[ind].location, str(ind), life_time=tiempo, color=carla.Color(255,255,0))
+for ind in bycicle_1_indices:
+    spawn_points[ind].location
+    world.debug.draw_string(spawn_points[ind].location, str(ind), life_time=tiempo, color=carla.Color(255,0,255))
+for ind in bycicle_2_indices:
+    spawn_points[ind].location
+    world.debug.draw_string(spawn_points[ind].location, str(ind), life_time=tiempo, color=carla.Color(0,255,255))
+    
 while True:
     world.tick()
 

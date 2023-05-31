@@ -1,8 +1,3 @@
-
-# Este archivo borra todos los actores presentes
-# en una simulación de CARLA
-# Autor: Daniel Steven Gamba Correa 
-
 import carla
 
 # Conexión al simulador CARLA
