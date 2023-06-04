@@ -1,3 +1,6 @@
+# Este archivo dibuja los puntos de las rutas que se le especifique
+# Autor: CARLA Simulator
+
 import carla
 import random
 
@@ -5,11 +8,6 @@ import random
 client = carla.Client('localhost', 2000)
 world = client.get_world()
 
-# Set up the simulator in synchronous mode
-settings = world.get_settings()
-settings.synchronous_mode = True # Enables synchronous mode
-settings.fixed_delta_seconds = 0.05
-world.apply_settings(settings)
 
 # Set up the TM in synchronous mode
 traffic_manager = client.get_trafficmanager()
@@ -70,6 +68,5 @@ for ind in bycicle_2_indices:
     spawn_points[ind].location
     world.debug.draw_string(spawn_points[ind].location, str(ind), life_time=tiempo, color=carla.Color(0,255,255))
     
-while True:
-    world.tick()
+
 

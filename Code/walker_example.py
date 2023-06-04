@@ -1,6 +1,7 @@
 # Este codigo realiza una ruta para un peaton. La ruta consiste en dar indefinidamente
 # vueltas a una manzana. Para ello se han definido 3 puntos y se va alternando el objetivo
 # del peaton entre estos 3 dependiendo de donde se encuentre.
+# Autor: Daniel Steven Gamba Correa
 
 import carla
 import random
