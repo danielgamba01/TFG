@@ -5,9 +5,11 @@ from rclpy.node import Node
 from sensor_msgs.msg import PointCloud2, PointField
 from carla_ros_bridge.sensor import create_cloud 
 import std_msgs.msg
+from rosgraph_msgs.msg import Clock
 
 import carla
 import numpy
+import time
 
 
 class LidarFusion(Node):
@@ -102,6 +104,9 @@ class LidarFusion(Node):
                 #Crear al publisher
                 pub_topic = f'/carla/ego_vehicle/LIDAR'
                 self.publisher = self.create_publisher(msg_type=PointCloud2, topic=pub_topic, qos_profile=10)
+                
+                #Crea un subscriptor para sincronizarse
+                self.subscription = self.create_subscription(Clock, 'clock',self.publish_method, 10)
 
                 # Conectarse al servidor de Carla
                 client = carla.Client('localhost', 2000)
@@ -147,9 +152,8 @@ class LidarFusion(Node):
                         if sensor_name== "LIDAR_7":
                                 print(f"El LIDAR 7 tiene un ID= {actor.id}")
                                 self.id_array[7]=actor.id
-
-        def publish_method(self):
-            # Llama a las funciones de cada uno de los lidar
+                                
+                # Llama a las funciones de cada uno de los lidar
                 lidar_actor_0=self.world.get_actor(self.id_array[0])
                 lidar_actor_0.listen(self.process_lidar_data_0)
                 
@@ -174,43 +178,39 @@ class LidarFusion(Node):
                 lidar_actor_7=self.world.get_actor(self.id_array[7])
                 lidar_actor_7.listen(self.process_lidar_data_7)
                 
-                # Tiempo para que se activen las funciones anteriores
-                for i in range(15):
-                    self.world.tick()
-                    
-                cont=0
-                while True:  
-                        # Une la información de todos los Lidar's
-                        self.world.tick()
-                        cont+=1
-                        
-                        all_lidar_data=numpy.concatenate((self.lidar_data_0,self.lidar_data_1),axis=0)
-                        all_lidar_data=numpy.concatenate((all_lidar_data,self.lidar_data_2),axis=0)
-                        all_lidar_data=numpy.concatenate((all_lidar_data,self.lidar_data_3),axis=0)
-                        all_lidar_data=numpy.concatenate((all_lidar_data,self.lidar_data_4),axis=0)
-                        all_lidar_data=numpy.concatenate((all_lidar_data,self.lidar_data_5),axis=0)
-                        all_lidar_data=numpy.concatenate((all_lidar_data,self.lidar_data_6),axis=0)
-                        all_lidar_data=numpy.concatenate((all_lidar_data,self.lidar_data_7),axis=0)
-                        
-                        #print(f'Datos del LIDAR_0: {self.lidar_data_0}')
-                        if cont > 20:
-                            # Cada 20 instantes de la simulacion genera el mensaje y lo publica en ROS
-                            lidar_msg=PointCloud2() 
-                            lidar_msg.header.stamp = self.get_clock().now().to_msg()
-                            lidar_msg.header.frame_id='ego_vehicle/LIDAR'
-                            fields = [
-                                PointField(name='x', offset=0, datatype=PointField.FLOAT32, count=1),
-                                PointField(name='y', offset=4, datatype=PointField.FLOAT32, count=1),
-                                PointField(name='z', offset=8, datatype=PointField.FLOAT32, count=1),
-                                PointField(name='intensity', offset=12, datatype=PointField.FLOAT32, count=1)
-                            ]
+                time.sleep(2.0)
 
-                            # we take the opposite of y axis
-                            # (as lidar point are express in left handed coordinate system, and ros need right handed)
-                            point_cloud_msg = create_cloud(lidar_msg.header, fields, all_lidar_data)
-                            self.publisher.publish(point_cloud_msg)
-                            print('Ha publicado')
-                            cont=0
+        def publish_method(self,msg):
+
+                # Une la información de todos los Lidar's
+                all_lidar_data=numpy.concatenate((self.lidar_data_0,self.lidar_data_1),axis=0)
+                all_lidar_data=numpy.concatenate((all_lidar_data,self.lidar_data_2),axis=0)
+                all_lidar_data=numpy.concatenate((all_lidar_data,self.lidar_data_3),axis=0)
+                all_lidar_data=numpy.concatenate((all_lidar_data,self.lidar_data_4),axis=0)
+                all_lidar_data=numpy.concatenate((all_lidar_data,self.lidar_data_5),axis=0)
+                all_lidar_data=numpy.concatenate((all_lidar_data,self.lidar_data_6),axis=0)
+                all_lidar_data=numpy.concatenate((all_lidar_data,self.lidar_data_7),axis=0)
+                        
+                #print(f'Datos del LIDAR_0: {self.lidar_data_0}')
+
+                # Cada 20 instantes de la simulacion genera el mensaje y lo publica en ROS
+                lidar_msg=PointCloud2() 
+                lidar_msg.header.stamp.sec = msg.clock.sec
+                lidar_msg.header.stamp.nanosec = msg.clock.nanosec
+                lidar_msg.header.frame_id='ego_vehicle/LIDAR'
+                fields = [
+                    PointField(name='x', offset=0, datatype=PointField.FLOAT32, count=1),
+                    PointField(name='y', offset=4, datatype=PointField.FLOAT32, count=1),
+                    PointField(name='z', offset=8, datatype=PointField.FLOAT32, count=1),
+                    PointField(name='intensity', offset=12, datatype=PointField.FLOAT32, count=1)
+                ]
+
+                # we take the opposite of y axis
+                # (as lidar point are express in left handed coordinate system, and ros need right handed)
+                point_cloud_msg = create_cloud(lidar_msg.header, fields, all_lidar_data)
+                self.publisher.publish(point_cloud_msg)
+                print('Ha publicado')
+
     
 
 
@@ -219,7 +219,6 @@ def main(args=None):
 
     lidar_fusion = LidarFusion()
     
-    lidar_fusion.publish_method()
     rclpy.spin(lidar_fusion)
 
     LidarFusion.destroy_node()
