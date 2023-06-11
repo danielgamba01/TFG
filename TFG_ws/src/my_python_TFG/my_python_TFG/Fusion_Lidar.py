@@ -106,7 +106,7 @@ class LidarFusion(Node):
                 self.publisher = self.create_publisher(msg_type=PointCloud2, topic=pub_topic, qos_profile=10)
                 
                 #Crea un subscriptor para sincronizarse
-                self.subscription = self.create_subscription(Clock, 'clock',self.publish_method, 10)
+                self.subscription = self.create_subscription(Clock, '/clock',self.publish_method, 10)
 
                 # Conectarse al servidor de Carla
                 client = carla.Client('localhost', 2000)
@@ -129,7 +129,7 @@ class LidarFusion(Node):
                         sensor_name = actor.attributes.get('role_name')
                         #print(f'El nombre del sensor es {sensor_name}')
                         if sensor_name== "LIDAR_0":
-                                print(f"El Front tiene un ID= {actor.id}")
+                                print(f"El LIDAR 0 tiene un ID= {actor.id}")
                                 self.id_array[0]=actor.id
                         if sensor_name== "LIDAR_1":
                                 print(f"El LIDAR 1 tiene un ID= {actor.id}")
@@ -154,34 +154,35 @@ class LidarFusion(Node):
                                 self.id_array[7]=actor.id
                                 
                 # Llama a las funciones de cada uno de los lidar
-                lidar_actor_0=self.world.get_actor(self.id_array[0])
-                lidar_actor_0.listen(self.process_lidar_data_0)
+                self.lidar_actor_0=self.world.get_actor(self.id_array[0])
+                self.lidar_actor_0.listen(self.process_lidar_data_0)
                 
-                lidar_actor_1=self.world.get_actor(self.id_array[1])
-                lidar_actor_1.listen(self.process_lidar_data_1)
+                self.lidar_actor_1=self.world.get_actor(self.id_array[1])
+                self.lidar_actor_1.listen(self.process_lidar_data_1)
 
-                lidar_actor_2=self.world.get_actor(self.id_array[2])
-                lidar_actor_2.listen(self.process_lidar_data_2)
+                self.lidar_actor_2=self.world.get_actor(self.id_array[2])
+                self.lidar_actor_2.listen(self.process_lidar_data_2)
                 
-                lidar_actor_3=self.world.get_actor(self.id_array[3])
-                lidar_actor_3.listen(self.process_lidar_data_3)
+                self.lidar_actor_3=self.world.get_actor(self.id_array[3])
+                self.lidar_actor_3.listen(self.process_lidar_data_3)
 
-                lidar_actor_4=self.world.get_actor(self.id_array[4])
-                lidar_actor_4.listen(self.process_lidar_data_4)
+                self.lidar_actor_4=self.world.get_actor(self.id_array[4])
+                self.lidar_actor_4.listen(self.process_lidar_data_4)
 
-                lidar_actor_5=self.world.get_actor(self.id_array[5])
-                lidar_actor_5.listen(self.process_lidar_data_5)
+                self.lidar_actor_5=self.world.get_actor(self.id_array[5])
+                self.lidar_actor_5.listen(self.process_lidar_data_5)
 
-                lidar_actor_6=self.world.get_actor(self.id_array[6])
-                lidar_actor_6.listen(self.process_lidar_data_6)
+                self.lidar_actor_6=self.world.get_actor(self.id_array[6])
+                self.lidar_actor_6.listen(self.process_lidar_data_6)
 
-                lidar_actor_7=self.world.get_actor(self.id_array[7])
-                lidar_actor_7.listen(self.process_lidar_data_7)
-                
+                self.lidar_actor_7=self.world.get_actor(self.id_array[7])
+                self.lidar_actor_7.listen(self.process_lidar_data_7)
                 time.sleep(2.0)
-
+                print(f'Datos del LIDAR_0: {self.lidar_data_0}')
+                print(f'Datos del LIDAR_7: {self.lidar_data_7}')     
+            
         def publish_method(self,msg):
-
+                
                 # Une la información de todos los Lidar's
                 all_lidar_data=numpy.concatenate((self.lidar_data_0,self.lidar_data_1),axis=0)
                 all_lidar_data=numpy.concatenate((all_lidar_data,self.lidar_data_2),axis=0)
@@ -192,12 +193,14 @@ class LidarFusion(Node):
                 all_lidar_data=numpy.concatenate((all_lidar_data,self.lidar_data_7),axis=0)
                         
                 #print(f'Datos del LIDAR_0: {self.lidar_data_0}')
+                #print(f'Datos del LIDAR_7: {self.lidar_data_7}')
+                print(f'Datos del LIDAR: {all_lidar_data}')
 
                 # Cada 20 instantes de la simulacion genera el mensaje y lo publica en ROS
                 lidar_msg=PointCloud2() 
                 lidar_msg.header.stamp.sec = msg.clock.sec
                 lidar_msg.header.stamp.nanosec = msg.clock.nanosec
-                lidar_msg.header.frame_id='ego_vehicle/LIDAR'
+                lidar_msg.header.frame_id='ego_vehicle'
                 fields = [
                     PointField(name='x', offset=0, datatype=PointField.FLOAT32, count=1),
                     PointField(name='y', offset=4, datatype=PointField.FLOAT32, count=1),
@@ -219,7 +222,10 @@ def main(args=None):
 
     lidar_fusion = LidarFusion()
     
-    rclpy.spin(lidar_fusion)
+    while rclpy.ok():
+        
+        rclpy.spin_once(lidar_fusion)
+        time.sleep(0.5)
 
     LidarFusion.destroy_node()
     rclpy.shutdown()
